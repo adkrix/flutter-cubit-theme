@@ -1,12 +1,11 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:themer/theme_cubit.dart';
+import 'package:themer/services/services.dart';
 
-import 'counter_cubit.dart';
+import 'services/counter/counter.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +15,7 @@ class HomePage extends StatelessWidget {
         actions: [
           IconButton(
             icon: const Icon(Icons.brightness_6),
-            onPressed: () => context.read<ThemeCubit>().toggleTheme(),
+            onPressed: () => context.read<SettingsCubit>().toggleTheme(),
           ),
         ],
       ),
